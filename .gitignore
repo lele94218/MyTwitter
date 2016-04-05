@@ -8,6 +8,7 @@ gen### Java template
 *.class
 
 # Mobile Tools for Java (J2ME)
+/target
 .mtj.tmp/
 /src/main/resources/META-INF/persistence.xml
 /src/main/resources/META-INF

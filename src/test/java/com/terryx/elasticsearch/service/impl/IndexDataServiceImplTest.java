@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.Assert.*;
 
 /**
@@ -24,7 +27,12 @@ public class IndexDataServiceImplTest {
     private IndexDataService indexDataService;
 
     @Test
-    public void test1() {
-        LOGGER.info(indexDataService.hasClient());
+    public void addOrUpdateDoc() throws Exception {
+        Map<String, Object> values = new HashMap<String, Object>();
+        values.put("name", "xuetaoran");
+        values.put("sex", "male");
+        values.put("age", 12);
+        boolean flag = indexDataService.addOrUpdateDoc("megacorp", "student", values);
+        LOGGER.info(flag);
     }
 }

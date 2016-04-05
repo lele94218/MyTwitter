@@ -93,8 +93,8 @@ public class IndexDataServiceImpl implements IndexDataService {
     }
 
     public boolean addOrUpdateDoc(String indice, String type, Map<String, Object> values) {
-        if (isAliases(indice))
-            return false;
+        //if (isAliases(indice))
+        //    return false;
         String id = (String) values.get("id");
 
         // 无 id 新增 Doc
