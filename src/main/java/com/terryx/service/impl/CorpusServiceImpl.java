@@ -54,7 +54,7 @@ public class CorpusServiceImpl implements CorpusService {
     }
 
     public void update(CorpusEntity corpusEntity) {
-        //@TODO
+        //TODO
     }
 
     public void doWordMarkToCorpus(String word, UserEntity userEntity) {

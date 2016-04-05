@@ -40,13 +40,13 @@ public class UserServiceImpl implements UserService {
     }
 
     public void update(UserEntity userEntity) {
-        //@TODO
+        //TODO
     }
 
     public void doTweetsToCorpusByUserId(int id) {
         UserEntity userEntity = findById(id);
         Collection<TweetEntity> tweetEntities = userEntity.getTweetsById();
-        //@TODO
+        //TODO
         System.out.println(tweetEntities.size());
     }
 }

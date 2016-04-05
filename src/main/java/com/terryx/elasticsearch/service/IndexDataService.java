@@ -1,15 +1,25 @@
 package com.terryx.elasticsearch.service;
 
+import com.terryx.comms.Pageable;
+import org.springframework.data.domain.Page;
+
 import java.util.Map;
 
 /**
  * Created by xueta on 2016/4/1 16:33.
+ * Relational DB -> Databases -> Tables -> Rows -> Columns
+ * Elasticsearch -> Indices   -> Types  -> Documents -> Fields
  */
 public interface IndexDataService {
 
     public boolean hasClient();
+
     /**
      * 根据索引及type来删除对应的文档（只删除所有文档，不会删除mapping）
+     *
+     * @param indice 索引
+     * @param type   类型
+     * @return
      */
     public boolean deleteDocByType(String indice, String type);
 
@@ -26,10 +36,11 @@ public interface IndexDataService {
     /**
      * 根据indice和type来查找文档
      */
-    //public Page<Map<String, Object>> findPage(Pageable pageable, String indice, String type);
+    public Page<Map<String, Object>> findPage(Pageable pageable, String indice, String type);
 
     /**
      * 根据id来查找文件信息
      */
     public Map<String, Object> findById(String indice, String type, String id);
+
 }

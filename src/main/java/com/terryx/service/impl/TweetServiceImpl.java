@@ -40,7 +40,7 @@ public class TweetServiceImpl implements TweetService {
     }
 
     public void update(TweetEntity tweetEntity) {
-        //@TODO
+        //TODO
     }
 
     public String getTextByTweetId(int id) {
