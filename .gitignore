@@ -5,8 +5,10 @@
 *.iml
 out
 gen### Java template
+/src/main/resources/META-INF/persistence.xml
 *.class
 
+/src/main/resources/META-INF
 # Mobile Tools for Java (J2ME)
 persistence.xml
 .mtj.tmp/
