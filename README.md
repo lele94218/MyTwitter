@@ -16,4 +16,4 @@ social_network_paper
     
     - Model: Spring Data, Hibernate, JPA
     
-    - View: JSP, JavaScript
+    - View: JSP, JavaScript 
