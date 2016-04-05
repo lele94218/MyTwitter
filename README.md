@@ -8,7 +8,7 @@ social_network_paper
 ============
 ## 介绍
 
-1. Java Web 应用, 用于算法演示
+1. Java Web 应用, 用于毕业设计算法演示
 
 2. MVC 设计模式, 技术选型：
 
