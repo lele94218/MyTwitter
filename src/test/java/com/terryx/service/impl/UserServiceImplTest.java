@@ -28,4 +28,19 @@ public class UserServiceImplTest {
     public void doTweetsToRawTextByUserId() throws Exception {
         userService.doTweetsToRawTextByUserId(1095);
     }
+
+    @Test
+    public void addTweetsToEsByUserId() throws Exception {
+        userService.AddTweetsToEsByUserId(1095);
+    }
+
+    @Test
+    public void doAllData() throws Exception {
+//        int start = 1116, end = 1364;
+//        for (int i = start; i <= end; ++ i) {
+//            userService.doTweetsToRawTextByUserId(i);
+//            userService.AddTweetsToEsByUserId(i);
+//        }
+       userService.AddTweetsToEsByUserId(1115);
+    }
 }

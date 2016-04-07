@@ -51,7 +51,7 @@ public class TweetServiceImpl implements TweetService {
 
     public void generateAndSaveRawText(int tweetId) throws Exception {
         String text = getTextByTweetId(tweetId);
-        Set<String> words = TweetsTextProcessing.doTweetsTextProcessing(text);
+        List<String> words = TweetsTextProcessing.doTweetsTextProcessing(text);
 
         StringBuilder stringBuilder = new StringBuilder();
         for (String word : words) {

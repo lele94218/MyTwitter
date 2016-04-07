@@ -1,5 +1,6 @@
 package com.terryx.service.impl;
 
+import com.terryx.elasticsearch.service.TweetDataService;
 import com.terryx.model.TweetEntity;
 import com.terryx.model.UserEntity;
 import com.terryx.repository.UserRepository;
@@ -26,6 +27,8 @@ public class UserServiceImpl implements UserService {
     CorpusService corpusService;
     @Autowired
     TweetService tweetService;
+    @Autowired
+    TweetDataService tweetDataService;
 
     public void save(UserEntity userEntity) {
         userRepository.save(userEntity);
@@ -62,13 +65,21 @@ public class UserServiceImpl implements UserService {
 
     public void doTweetsToRawTextByUserId(int userId) throws Exception {
         UserEntity userEntity = findById(userId);
-        LOGGER.info(userEntity.getName());
         Collection<TweetEntity> tweetEntities = userEntity.getTweetsById();
-        LOGGER.info(tweetEntities != null);
         for (TweetEntity tweetEntity : tweetEntities) {
             int tweetId = tweetEntity.getTweetId();
             tweetService.generateAndSaveRawText(tweetId);
-            LOGGER.info("update raw_text: " + tweetId);
+            LOGGER.info(userId + " update raw_text: " + tweetId);
+        }
+    }
+
+    public void AddTweetsToEsByUserId(int userId) throws Exception {
+        UserEntity userEntity = findById(userId);
+        Collection<TweetEntity> tweetEntities = userEntity.getTweetsById();
+        for (TweetEntity tweetEntity : tweetEntities) {
+            int tweetId = tweetEntity.getTweetId();
+            tweetDataService.addTweetDataByTweetId(tweetId);
+            LOGGER.info(userId + " add raw_text to es: " + tweetId);
         }
     }
 }

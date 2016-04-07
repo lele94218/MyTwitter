@@ -22,4 +22,12 @@ public interface UserService extends BaseService<UserEntity> {
      * @throws Exception
      */
     public void doTweetsToRawTextByUserId(int userId) throws Exception;
+
+    /**
+     * 对用户的所有推文, 将 raw_text 加入 es
+     *
+     * @param userId
+     * @throws Exception
+     */
+    public void AddTweetsToEsByUserId(int userId) throws Exception;
 }

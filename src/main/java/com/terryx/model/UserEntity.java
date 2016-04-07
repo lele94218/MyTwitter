@@ -176,7 +176,7 @@ public class UserEntity {
         return result;
     }
 
-    @OneToMany(mappedBy = "userById", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "userById")
     //@Fetch(value = FetchMode.SUBSELECT)
     public Set<CorpusEntity> getCorpusesById() {
         return CorpusesById;

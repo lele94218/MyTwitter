@@ -85,7 +85,7 @@ public class CorpusServiceImpl implements CorpusService {
         String text = tweetEntity.getText();
         UserEntity userEntity = tweetEntity.getUserById();
 
-        Set<String> words = TweetsTextProcessing.doTweetsTextProcessing(text);
+        List<String> words = TweetsTextProcessing.doTweetsTextProcessing(text);
         for (String word : words) {
             doWordMarkToCorpus(word, userEntity);
         }

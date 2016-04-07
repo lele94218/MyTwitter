@@ -2,9 +2,7 @@ package com.terryx.sematic.raw;
 
 import org.junit.Test;
 
-import java.util.Set;
-
-import static org.junit.Assert.*;
+import java.util.List;
 
 /**
  * Created by xueta on 2016/3/25.
@@ -21,15 +19,16 @@ public class TweetsTextProcessingTest {
 
     @Test
     public void testTokenzieStopStem() throws Exception {
-        String str = TweetsTextProcessing.processingBeforeTokenize(test_str);
+        String str = TweetsTextProcessing.processingBeforeTokenize("happy people do the things");
+        System.out.println(str);
         str = TweetsTextProcessing.tokenzieStopStem(str);
         System.out.println(str);
     }
 
     @Test
     public void testDoTweetsTextProcessing() throws Exception {
-        Set<String> stringSet = TweetsTextProcessing.doTweetsTextProcessing(test_str);
-        for (String word : stringSet) {
+        List<String> words = TweetsTextProcessing.doTweetsTextProcessing(test_str);
+        for (String word : words) {
             System.out.println(word);
         }
     }
