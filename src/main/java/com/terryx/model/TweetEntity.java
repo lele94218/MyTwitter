@@ -1,7 +1,7 @@
 package com.terryx.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  * Created by xueta on 2016/3/26 17:07.
@@ -12,7 +12,7 @@ public class TweetEntity {
     private int tweetId;
     private String twTweetId;
     private String text;
-    private String createdAt;
+    private Timestamp createdAt;
     private String lang;
     private String coordinatesX;
     private String coordinatesY;
@@ -50,11 +50,11 @@ public class TweetEntity {
 
     @Basic
     @Column(name = "created_at", nullable = false)
-    public String getCreatedAt() {
+    public Timestamp getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
 

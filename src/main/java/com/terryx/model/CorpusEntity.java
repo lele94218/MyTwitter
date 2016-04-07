@@ -1,6 +1,7 @@
 package com.terryx.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 /**
  * Created by xueta on 2016/3/26 17:07.
@@ -12,6 +13,7 @@ public class CorpusEntity {
     private String word;
     private Integer count;
     private UserEntity userById;
+    private Timestamp latestTime;
 
     @Id
     @Column(name = "corpus_id", nullable = false)
@@ -43,6 +45,16 @@ public class CorpusEntity {
         this.count = count;
     }
 
+    @Basic
+    @Column(name = "latest_time", nullable = true)
+    public Timestamp getLatestTime() {
+        return latestTime;
+    }
+
+    public void setLatestTime(Timestamp latestTime) {
+        this.latestTime = latestTime;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -53,6 +65,8 @@ public class CorpusEntity {
         if (corpusId != that.corpusId) return false;
         if (word != null ? !word.equals(that.word) : that.word != null) return false;
         if (count != null ? !count.equals(that.count) : that.count != null) return false;
+        if (latestTime != null ? !latestTime.equals(that.count) : that.latestTime != null) return false;
+
 
         return true;
     }
@@ -62,6 +76,7 @@ public class CorpusEntity {
         int result = corpusId;
         result = 31 * result + (word != null ? word.hashCode() : 0);
         result = 31 * result + (count != null ? count.hashCode() : 0);
+        result = 31 * result + (latestTime != null ? latestTime.hashCode() : 0);
         return result;
     }
 

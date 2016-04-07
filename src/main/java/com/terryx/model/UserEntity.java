@@ -5,6 +5,7 @@ import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 /**
  * Created by xueta on 2016/3/26 17:07.
@@ -23,8 +24,8 @@ public class UserEntity {
     private String rcmdUserIds;
     private String sinceId;
     private String maxId;
-    private Collection<CorpusEntity> CorpusesById;
-    private Collection<TweetEntity> TweetsById;
+    private Set<CorpusEntity> CorpusesById;
+    private Set<TweetEntity> TweetsById;
 
     @Id
     @Column(name = "user_id", nullable = false)
@@ -176,22 +177,22 @@ public class UserEntity {
     }
 
     @OneToMany(mappedBy = "userById", fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
-    public Collection<CorpusEntity> getCorpusesById() {
+    //@Fetch(value = FetchMode.SUBSELECT)
+    public Set<CorpusEntity> getCorpusesById() {
         return CorpusesById;
     }
 
-    public void setCorpusesById(Collection<CorpusEntity> corpusesById) {
+    public void setCorpusesById(Set<CorpusEntity> corpusesById) {
         CorpusesById = corpusesById;
     }
 
     @OneToMany(mappedBy = "userById", fetch = FetchType.EAGER)
-    @Fetch(value = FetchMode.SUBSELECT)
-    public Collection<TweetEntity> getTweetsById() {
+    //@Fetch(value = FetchMode.SUBSELECT)
+    public Set<TweetEntity> getTweetsById() {
         return TweetsById;
     }
 
-    public void setTweetsById(Collection<TweetEntity> tweetsById) {
+    public void setTweetsById(Set<TweetEntity> tweetsById) {
         TweetsById = tweetsById;
     }
 }

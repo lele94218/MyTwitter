@@ -17,3 +17,10 @@ social_network_paper
     - Model: Spring Data, Hibernate, JPA
     
     - View: JSP, JavaScript 
+    
+===
+## 算法思路
+
+1. 使用 Elasticsearch 对 Tweets 进行索引, 对每个用户索引 500 - 1000 词
+
+2. Elasticsearch 与 Wordnet 结合进行搜索, 获得指数

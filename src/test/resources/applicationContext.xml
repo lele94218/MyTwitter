@@ -44,6 +44,6 @@
     <!-- client 加载 -->
     <bean class="com.terryx.elasticsearch.client.TransportClientFactoryBean">
         <property name="clusterName" value="elasticsearch"/>
-        <property name="clusterNodes" value="127.0.0.1:9300"/>
+        <property name="clusterNodes" value="42.96.139.138:9300"/>
     </bean>
 </beans>

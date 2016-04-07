@@ -29,9 +29,9 @@ public class IndexDataServiceImplTest {
     @Test
     public void addOrUpdateDoc() throws Exception {
         Map<String, Object> values = new HashMap<String, Object>();
-        values.put("name", "xuetaoran");
-        values.put("sex", "male");
-        values.put("age", 12);
+        values.put("name", "wangwang");
+        values.put("sex", "female");
+        values.put("age", 2199);
         boolean flag = indexDataService.addOrUpdateDoc("megacorp", "student", values);
         LOGGER.info(flag);
     }

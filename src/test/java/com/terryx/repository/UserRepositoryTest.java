@@ -1,5 +1,6 @@
 package com.terryx.repository;
 
+import com.terryx.model.CorpusEntity;
 import com.terryx.model.TweetEntity;
 import com.terryx.model.UserEntity;
 import org.junit.Test;
@@ -37,5 +38,12 @@ public class UserRepositoryTest {
         UserEntity userEntity = userRepository.findOne(1095);
         Collection<TweetEntity> tweetEntityCollection = userEntity.getTweetsById();
         System.out.println(tweetEntityCollection.size());
+    }
+
+    @Test
+    public void testFindCorpusById() {
+        UserEntity userEntity = userRepository.findOne(1096);
+        Collection<CorpusEntity> corpusEntityCollection = userEntity.getCorpusesById();
+        System.out.println(corpusEntityCollection.size());
     }
 }
