@@ -58,4 +58,14 @@ public class TweetServiceImplTest {
         String str = tweetService.getTextByTweetId(1021);
         System.out.println(str);
     }
+
+    @Test
+    public void updateRawText() throws Exception {
+        tweetService.updateRawText("haha", 1021);
+    }
+
+    @Test
+    public void generateAndSaveRawText() throws Exception {
+        tweetService.generateAndSaveRawText(1021);
+    }
 }

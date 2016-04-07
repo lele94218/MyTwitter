@@ -38,5 +38,5 @@ public interface CorpusService extends BaseService<CorpusEntity> {
      *
      * @param tweetId tweet 表中的 id
      */
-    public void doCorpusByTweetId(int tweetId);
+    public void doCorpusByTweetId(int tweetId) throws Exception;
 }

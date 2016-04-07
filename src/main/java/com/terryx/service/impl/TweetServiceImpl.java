@@ -2,12 +2,14 @@ package com.terryx.service.impl;
 
 import com.terryx.model.TweetEntity;
 import com.terryx.repository.TweetRepository;
+import com.terryx.sematic.raw.TweetsTextProcessing;
 import com.terryx.service.CorpusService;
 import com.terryx.service.TweetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by xueta on 2016/3/25.
@@ -43,8 +45,25 @@ public class TweetServiceImpl implements TweetService {
         //TODO
     }
 
-    public String getTextByTweetId(int id) {
-        TweetEntity tweetEntity = findById(id);
+    public void updateRawText(String rawText, int tweetId) {
+        tweetRepository.updateRawText(rawText, tweetId);
+    }
+
+    public void generateAndSaveRawText(int tweetId) throws Exception {
+        String text = getTextByTweetId(tweetId);
+        Set<String> words = TweetsTextProcessing.doTweetsTextProcessing(text);
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String word : words) {
+            stringBuilder.append(word + " ");
+        }
+
+        updateRawText(stringBuilder.toString(), tweetId);
+    }
+
+    public String getTextByTweetId(int tweetId) {
+        TweetEntity tweetEntity = findById(tweetId);
+
         return tweetEntity.getText();
     }
 }

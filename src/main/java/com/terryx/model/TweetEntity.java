@@ -7,11 +7,12 @@ import java.sql.Timestamp;
  * Created by xueta on 2016/3/26 17:07.
  */
 @Entity
-@Table(name = "Tweet", schema = "firends_recommend", catalog = "")
+@Table(name = "Tweet", schema = "firends_recommend")
 public class TweetEntity {
     private int tweetId;
     private String twTweetId;
     private String text;
+    private String rawText;
     private Timestamp createdAt;
     private String lang;
     private String coordinatesX;
@@ -46,6 +47,16 @@ public class TweetEntity {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    @Basic
+    @Column(name = "raw_text", nullable = true, length = -1)
+    public String getRawText() {
+        return rawText;
+    }
+
+    public void setRawText(String rawText) {
+        this.rawText = rawText;
     }
 
     @Basic
@@ -96,13 +107,6 @@ public class TweetEntity {
         TweetEntity that = (TweetEntity) o;
 
         if (tweetId != that.tweetId) return false;
-        if (twTweetId != null ? !twTweetId.equals(that.twTweetId) : that.twTweetId != null) return false;
-        if (text != null ? !text.equals(that.text) : that.text != null) return false;
-        if (createdAt != null ? !createdAt.equals(that.createdAt) : that.createdAt != null) return false;
-        if (lang != null ? !lang.equals(that.lang) : that.lang != null) return false;
-        if (coordinatesX != null ? !coordinatesX.equals(that.coordinatesX) : that.coordinatesX != null) return false;
-        if (coordinatesY != null ? !coordinatesY.equals(that.coordinatesY) : that.coordinatesY != null) return false;
-
         return true;
     }
 
@@ -110,11 +114,7 @@ public class TweetEntity {
     public int hashCode() {
         int result = tweetId;
         result = 31 * result + (twTweetId != null ? twTweetId.hashCode() : 0);
-        result = 31 * result + (text != null ? text.hashCode() : 0);
         result = 31 * result + (createdAt != null ? createdAt.hashCode() : 0);
-        result = 31 * result + (lang != null ? lang.hashCode() : 0);
-        result = 31 * result + (coordinatesX != null ? coordinatesX.hashCode() : 0);
-        result = 31 * result + (coordinatesY != null ? coordinatesY.hashCode() : 0);
         return result;
     }
 

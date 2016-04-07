@@ -11,7 +11,7 @@ import java.util.Set;
  * Created by xueta on 2016/3/26 17:07.
  */
 @Entity
-@Table(name = "User", schema = "firends_recommend", catalog = "")
+@Table(name = "User", schema = "firends_recommend")
 public class UserEntity {
     private int userId;
     private String twUserId;

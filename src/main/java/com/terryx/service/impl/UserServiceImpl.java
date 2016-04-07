@@ -3,7 +3,10 @@ package com.terryx.service.impl;
 import com.terryx.model.TweetEntity;
 import com.terryx.model.UserEntity;
 import com.terryx.repository.UserRepository;
+import com.terryx.service.CorpusService;
+import com.terryx.service.TweetService;
 import com.terryx.service.UserService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +18,14 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl implements UserService {
+    private static final Logger LOGGER = Logger.getLogger(UserServiceImpl.class);
+
     @Autowired
     UserRepository userRepository;
-
+    @Autowired
+    CorpusService corpusService;
+    @Autowired
+    TweetService tweetService;
 
     public void save(UserEntity userEntity) {
         userRepository.save(userEntity);
@@ -43,10 +51,24 @@ public class UserServiceImpl implements UserService {
         //TODO
     }
 
-    public void doTweetsToCorpusByUserId(int id) {
-        UserEntity userEntity = findById(id);
+    public void doTweetsToCorpusByUserId(int userId) throws Exception {
+        UserEntity userEntity = findById(userId);
         Collection<TweetEntity> tweetEntities = userEntity.getTweetsById();
-        //TODO
-        System.out.println(tweetEntities.size());
+        for (TweetEntity tweetEntity : tweetEntities) {
+            corpusService.doCorpusByTweetId(tweetEntity.getTweetId());
+            LOGGER.info("Insert into corpus: " + tweetEntity.getTwTweetId());
+        }
+    }
+
+    public void doTweetsToRawTextByUserId(int userId) throws Exception {
+        UserEntity userEntity = findById(userId);
+        LOGGER.info(userEntity.getName());
+        Collection<TweetEntity> tweetEntities = userEntity.getTweetsById();
+        LOGGER.info(tweetEntities != null);
+        for (TweetEntity tweetEntity : tweetEntities) {
+            int tweetId = tweetEntity.getTweetId();
+            tweetService.generateAndSaveRawText(tweetId);
+            LOGGER.info("update raw_text: " + tweetId);
+        }
     }
 }

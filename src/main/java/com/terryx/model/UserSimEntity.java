@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by xueta on 2016/3/24.
  */
 @Entity
-@Table(name = "UserSim", schema = "firends_recommend", catalog = "")
+@Table(name = "UserSim", schema = "firends_recommend")
 public class UserSimEntity {
     private int usersimId;
     private String usersHashId;

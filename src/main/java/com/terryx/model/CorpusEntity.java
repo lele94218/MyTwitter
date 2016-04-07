@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * Created by xueta on 2016/3/26 17:07.
  */
 @Entity
-@Table(name = "Corpus", schema = "firends_recommend", catalog = "")
+@Table(name = "Corpus", schema = "firends_recommend")
 public class CorpusEntity {
     private int corpusId;
     private String word;
