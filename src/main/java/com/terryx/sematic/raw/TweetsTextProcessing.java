@@ -73,7 +73,8 @@ public class TweetsTextProcessing {
         tokenStream = new StopFilter(Version.LUCENE_43, tokenStream, stopWords);
         // Stemming
 //        tokenStream = new PorterStemFilter(tokenStream);
-        // TODO 换一种 stemmer
+        // 换一种 stemmer
+
 
         StringBuilder sb = new StringBuilder();
 
@@ -85,7 +86,8 @@ public class TweetsTextProcessing {
             }
             sb.append(charTermAttribute.toString());
         }
-
+//        Stemmer stemmer = new Stemmer();
+//        return stemmer.stem(sb.toString());
         return sb.toString();
     }
 

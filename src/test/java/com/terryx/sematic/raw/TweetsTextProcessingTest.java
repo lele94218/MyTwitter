@@ -19,7 +19,7 @@ public class TweetsTextProcessingTest {
 
     @Test
     public void testTokenzieStopStem() throws Exception {
-        String str = TweetsTextProcessing.processingBeforeTokenize("happy people do the things");
+        String str = TweetsTextProcessing.processingBeforeTokenize("happy people do the things Chinese great walls happiness");
         System.out.println(str);
         str = TweetsTextProcessing.tokenzieStopStem(str);
         System.out.println(str);
