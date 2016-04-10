@@ -1,7 +1,5 @@
 package com.terryx.elasticsearch.service;
 
-import org.elasticsearch.action.search.SearchResponse;
-
 import java.util.List;
 import java.util.Map;
 
@@ -13,12 +11,11 @@ public interface SearchDataService {
      * 获取搜索结果
      *
      * @param keyword
-     * @param resultFields
-     * @param urlField
+     * @param userId
      * @param from
+     * @param size
      * @param params
      * @return
      */
-    public List<Map<String, Object>> getResult(String keyword, String resultFields, String urlField, int from,
-                                               Map<String, String> params);
+    public List<Map<String, Object>> getResult(String keyword, int userId, int from, int size, Map<String, String> params);
 }
