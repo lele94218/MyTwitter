@@ -22,7 +22,7 @@
           rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
-    <link href="../bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+    <!--<link href="../bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">-->
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
@@ -30,8 +30,6 @@
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Bootstrap Paginator -->
-    <script src="../bower_components/bootstrap-paginator-master/build/bootstrap-paginator.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -459,6 +457,7 @@
                         </div>
                     </div>
                 </div>
+                <ul id="pagination-demo" class="pagination"></ul>
             </div>
             <!-- /.row -->
         </div>
@@ -485,16 +484,10 @@
 <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
 <script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 
-<!-- Page-Level Demo Scripts - Tables - Use for reference -->
-<script>
-    $(document).ready(function () {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
 
-</script>
+<script src="../js/jquery.twbsPagination.min.js"></script>
 
+<!-- 展开 -->
 <script type="text/javascript">
     $(function () {
         $('#collapseOne').collapse('hide')
@@ -507,6 +500,16 @@
     });
     $(function () {
         $('#collapseFour').collapse('hide')
+    });
+</script>
+<!-- 分页 -->
+<script type='text/javascript'>
+    $('#pagination-demo').twbsPagination({
+        totalPages: 35,
+        visiblePages: 7,
+        onPageClick: function (event, page) {
+            $('#page-content').text('Page ' + page);
+        }
     });
 </script>
 
