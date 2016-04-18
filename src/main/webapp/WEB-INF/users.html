@@ -385,20 +385,88 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Users</h1>
+                    <h1 class="page-header">Luanne Rice @LuanneRice</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
                 <div class="panel-group" id="accordion">
-                    <div id="loading" class="panel panel-default">
-                        <img src="/img/loading.gif" height="30" width="30">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"
+                                   aria-expanded="true" class="">
+                                    Details
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse in" aria-expanded="true">
+
+                            <div class="panel-body">
+                                <div class="row clearfix">
+                                    <div class="col-md-2 column">
+                                        <img width="120" height="120" src="img/profile/0X5Qkb8M_normal.jpeg"
+                                             class="img-thumbnail"/>
+                                    </div>
+                                    <div class="col-md-10 column">
+                                        <div class="row clearfix">
+                                            <em>NY Times best selling writer. THE SECRET LANGUAGE OF SISTERS is
+                                                available now.</em>
+                                        </div>
+                                        <div class="row clearfix">
+                                            <div class="col-md-4 column">
+                                                <h4></h4>
+                                            </div>
+                                            <div class="col-md-8 column">
+                                                <div class="col-md-2 column">
+
+                                                </div>
+                                                <div class="col-md-10 column">
+                                                    <h6><strong>Similar users:</strong></h6>
+                                                    <img src="img/profile/0X5Qkb8M_normal.jpeg" class="img-thumbnail"/>
+                                                    <img src="img/profile/1wpS7suK_normal.jpeg" class="img-thumbnail"/>
+                                                    <img src="img/profile/0X5Qkb8M_normal.jpeg" class="img-thumbnail"/>
+                                                    <img src="img/profile/0X5Qkb8M_normal.jpeg" class="img-thumbnail"/>
+                                                    <img src="img/profile/3dUsYGIz_normal.png" class="img-thumbnail"/>
+                                                    <img src="img/profile/0X5Qkb8M_normal.jpeg" class="img-thumbnail"/>
+                                                    <img src="img/profile/3dUsYGIz_normal.png" class="img-thumbnail"/>
+                                                    <img src="img/profile/0X5Qkb8M_normal.jpeg" class="img-thumbnail"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <ul id="pagination-demo" class="pagination"></ul>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="page-header">Tweets</h3>
+                </div>
             </div>
             <!-- /.row -->
+            <div class="row">
+                <div class="col-md-12 column">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Panel title
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            Panel content
+                        </div>
+                        <div class="panel-footer">
+                            Panel footer
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /.container-fluid -->
     </div>
@@ -427,98 +495,7 @@
 <script src="js/jquery.twbsPagination.min.js"></script>
 
 <!-- 分页并同步数据 -->
-<script type='text/javascript'>
-    function add(str1, str2, i) {
 
-        var panel = $("<div class='panel panel-default'></div>");
-
-        var panel_heading = $("<div class='panel-heading'></div>");
-        var hh4 = $("<h4 class='panel-title'><a data-toggle='collapse' data-parent='#accordion' href='#collapse" + i + "'>" + str1 + "</a></h4>");
-        hh4.appendTo(panel_heading);
-
-        var div_collapse = $("<div id='collapse" + i + "' class='panel-collapse collapse in'></div>");
-        var div_panel_body = $("<div class='panel-body'>" + str2 + "</div>");
-        div_panel_body.appendTo(div_collapse);
-
-        panel_heading.appendTo(panel);
-        div_collapse.appendTo(panel);
-
-        panel.appendTo("#accordion");
-    }
-
-    $(function () {
-        var page = {};
-        page["page"] = 0;
-        page["size"] = 15;
-        $.ajax({
-            type: "POST",
-            contentType: "application/json",
-            url: "/users",
-            data: JSON.stringify(page),
-            dataType: 'json',
-            timeout: 100000,
-            success: function (data) {
-                console.log("SUCCESS: ", data);
-                display(data);
-                var pageNum = data.totalPages;
-                addPage(pageNum);
-            },
-            error: function (e) {
-                console.log("ERROR: ", e);
-            },
-            done: function (e) {
-                console.log("DONE");
-            }
-        });
-
-    });
-    function callback(pageNo, pageSize) {
-        var page = {};
-        page["page"] = pageNo;
-        page["size"] = pageSize;
-        $.ajax({
-            type: "POST",
-            contentType: "application/json",
-            url: "/users",
-            data: JSON.stringify(page),
-            dataType: 'json',
-            timeout: 100000,
-            success: function (data) {
-                console.log("SUCCESS: ", data);
-                display(data);
-            },
-            error: function (e) {
-                console.log("ERROR: ", e);
-            },
-            done: function (e) {
-                console.log("DONE");
-            }
-        });
-    }
-
-    function addPage(pageNum) {
-        $('#pagination-demo').twbsPagination({
-            totalPages: pageNum,
-            visiblePages: 7,
-            onPageClick: function (event, page) {
-                $('#accordion').empty();
-                var imgHtml = "<div id='loading' class='panel panel-default'><img src='/img/loading.gif' height='30' width='30'></div>";
-                $('#accordion').append(imgHtml);
-                callback(page-1, 15);
-            }
-        });
-    }
-
-    function display(data) {
-        $('#loading').remove();
-        for (var i = 0; i < data.content.length; ++i) {
-            add(data.content[i].name + " @" + data.content[i].screenName, data.content[i].description, i + 1);
-            $(function () {
-                $('#collapse' + (i + 1)).collapse('hide');
-            });
-        }
-    }
-</script>
 
 </body>
 

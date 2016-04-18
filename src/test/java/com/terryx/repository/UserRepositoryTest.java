@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.Collection;
 
 /**
@@ -22,9 +24,12 @@ public class UserRepositoryTest {
     UserRepository userRepository;
 
     @Test
-    public void testFindUser() {
-        UserEntity userEntity = userRepository.findOne(1095);
-        System.out.println(userEntity.getName());
+    public void testFindUser() throws UnsupportedEncodingException {
+        UserEntity userEntity = userRepository.findOne(1109);
+        String ds = userEntity.getDescription();
+        String dds = URLDecoder.decode(ds, "UTF-8");
+        System.out.println(dds);
+
     }
 
     @Test
