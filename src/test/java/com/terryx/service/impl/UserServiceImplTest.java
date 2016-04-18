@@ -1,10 +1,15 @@
 package com.terryx.service.impl;
 
+import com.terryx.model.UserEntity;
 import com.terryx.service.UserService;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -42,5 +47,16 @@ public class UserServiceImplTest {
 //            userService.AddTweetsToEsByUserId(i);
         }
 //       userService.AddTweetsToEsByUserId(1115);
+    }
+
+    @Test
+    public void findAll() throws Exception {
+        Sort sort = new Sort(Sort.Direction.ASC, "userId");
+        Pageable pageable = new PageRequest(1, 10, sort);
+        Page<UserEntity> userEntityPage = userService.findAll(pageable);
+        for (UserEntity userEntity : userEntityPage) {
+            LOGGER.info(userEntity.getName());
+        }
+
     }
 }

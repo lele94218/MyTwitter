@@ -1,10 +1,6 @@
 package com.terryx.elasticsearch.service.impl;
 
-import com.terryx.comms.Order;
-import com.terryx.comms.Order.Direction;
-import com.terryx.comms.Pageable;
 import com.terryx.elasticsearch.service.IndexDataService;
-import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.delete.DeleteRequest;
@@ -13,15 +9,12 @@ import org.elasticsearch.action.deletebyquery.DeleteByQueryResponse;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
-import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.rest.RestStatus;
-import org.elasticsearch.search.sort.SortOrder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -121,25 +114,6 @@ public class IndexDataServiceImpl implements IndexDataService {
     public Map<String, Object> findById(String indice, String type, String id) {
         GetResponse actionGet = client.prepareGet(indice, type, id).execute().actionGet();
         return actionGet.getSourceAsMap();
-    }
-
-    public Page<Map<String, Object>> findPage(Pageable pageable, String indice, String type) {
-        int pageSize = pageable.getPageSize() > 0 ? pageable.getPageSize() : 20;
-        int pageNumber = pageable.getPageNumber() > 0 ? pageable.getPageNumber() : 1;
-        int start = (pageNumber - 1) * pageSize;
-
-        SearchRequestBuilder request = client.prepareSearch(indice).setTypes(type).setFrom(start).setSize(pageSize);
-        String orderProperty = pageable.getOrderProperty();
-        if (!StringUtils.isEmpty(orderProperty)) {
-            Direction orderDirection = pageable.getOrderDirection();
-            if (orderDirection.compareTo(Direction.asc) == 0) {
-                request.addSort(orderProperty, SortOrder.ASC);
-            } else {
-                request.addSort(orderProperty, SortOrder.DESC);
-            }
-        }
-        // TODO
-        return null;
     }
 
     private void validate(String... values) {

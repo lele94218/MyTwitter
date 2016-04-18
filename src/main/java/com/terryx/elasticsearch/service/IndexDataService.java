@@ -1,8 +1,5 @@
 package com.terryx.elasticsearch.service;
 
-import com.terryx.comms.Pageable;
-import org.springframework.data.domain.Page;
-
 import java.util.Map;
 
 /**
@@ -33,10 +30,6 @@ public interface IndexDataService {
      */
     public boolean addOrUpdateDoc(String indice, String type, Map<String, Object> values);
 
-    /**
-     * 根据indice和type来查找文档
-     */
-    public Page<Map<String, Object>> findPage(Pageable pageable, String indice, String type);
 
     /**
      * 根据id来查找文件信息

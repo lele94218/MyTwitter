@@ -8,6 +8,8 @@ import com.terryx.sematic.raw.TweetsTextProcessing;
 import com.terryx.service.CorpusService;
 import com.terryx.service.TweetService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -57,6 +59,10 @@ public class CorpusServiceImpl implements CorpusService {
 
     public void update(CorpusEntity corpusEntity) {
         //TODO
+    }
+
+    public Page<CorpusEntity> findAll(Pageable pageable) {
+        return corpusRepository.findAll(pageable);
     }
 
     public void doWordMarkToCorpus(String word, UserEntity userEntity) {

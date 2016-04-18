@@ -9,6 +9,8 @@ import com.terryx.service.TweetService;
 import com.terryx.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -52,6 +54,10 @@ public class UserServiceImpl implements UserService {
 
     public void update(UserEntity userEntity) {
         //TODO
+    }
+
+    public Page<UserEntity> findAll(Pageable pageable) {
+        return userRepository.findAll(pageable);
     }
 
     public void doTweetsToCorpusByUserId(int userId) throws Exception {

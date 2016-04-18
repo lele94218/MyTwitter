@@ -12,23 +12,23 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="css/metisMenu.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
+    <link href="css/dataTables.bootstrap.css"
           rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
-    <!--<link href="../bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">-->
+    <!--<link href="bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">-->
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -392,70 +392,23 @@
             <!-- /.row -->
             <div class="row">
                 <div class="panel-group" id="accordion">
+
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                                     Household Bargains @HomeDealUK
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse in">
+                        <div id="collapse1" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                                lomo.
+                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                                proident. Ad vegan excepteur butcher vice lomo.
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                    Household Bargains @HomeDealUK
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                                lomo.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                    Household Bargains @HomeDealUK
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                                lomo.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                    点击我进行展开，再次点击我进行折叠。第 4 部分--options 方法
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                                lomo.
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <ul id="pagination-demo" class="pagination"></ul>
             </div>
@@ -469,50 +422,89 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="js/metisMenu.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="../dist/js/sb-admin-2.js"></script>
+<script src="js/sb-admin-2.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-<script src="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap.min.js"></script>
 
 
-<script src="../js/jquery.twbsPagination.min.js"></script>
+<script src="js/jquery.twbsPagination.min.js"></script>
+
+<!-- 分页并同步数据 -->
+<script type='text/javascript'>
+    function add(str1, str2, i) {
+
+        var panel = $("<div class='panel panel-default'></div>");
+
+        var panel_heading = $("<div class='panel-heading'></div>");
+        var hh4 = $("<h4 class='panel-title'><a data-toggle='collapse' data-parent='#accordion' href='#collapse" + i + "'>" + str1 + "</a></h4>");
+        hh4.appendTo(panel_heading);
+
+        var div_collapse = $("<div id='collapse" + i + "' class='panel-collapse collapse in'></div>");
+        var div_panel_body = $("<div class='panel-body'>" + str2 + "</div>");
+        div_panel_body.appendTo(div_collapse);
+
+        panel_heading.appendTo(panel);
+        div_collapse.appendTo(panel);
+
+        panel.appendTo("#accordion");
+    }
+
+    $(function () {
+        var page = {};
+        page["page"] = 1;
+        page["size"] = 15;
+        $.ajax({
+            type : "POST",
+            contentType : "application/json",
+            url : "/users",
+            data : JSON.stringify(page),
+            dataType : 'json',
+            timeout : 100000,
+            success : function(data) {
+                console.log("SUCCESS: ", data);
+            },
+            error : function(e) {
+                console.log("ERROR: ", e);
+            },
+            done : function(e) {
+                console.log("DONE");
+            }
+        });
+        add("fds", "fdsfsd", 2);
+    });
+
+    $('#pagination-demo').twbsPagination({
+        totalPages: 35,
+        visiblePages: 7
+    });
+</script>
 
 <!-- 展开 -->
 <script type="text/javascript">
     $(function () {
-        $('#collapseOne').collapse('hide')
+        $('#collapse1').collapse('hide')
     });
     $(function () {
-        $('#collapseTwo').collapse('hide')
+        $('#collapse2').collapse('hide')
     });
     $(function () {
-        $('#collapseThree').collapse('hide')
+        $('#collapse3').collapse('hide')
     });
     $(function () {
-        $('#collapseFour').collapse('hide')
+        $('#collapse4').collapse('hide')
     });
 </script>
-<!-- 分页 -->
-<script type='text/javascript'>
-    $('#pagination-demo').twbsPagination({
-        totalPages: 35,
-        visiblePages: 7,
-        onPageClick: function (event, page) {
-            $('#page-content').text('Page ' + page);
-        }
-    });
-</script>
-
 </body>
 
 </html>

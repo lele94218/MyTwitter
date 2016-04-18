@@ -6,6 +6,8 @@ import com.terryx.sematic.raw.TweetsTextProcessing;
 import com.terryx.service.CorpusService;
 import com.terryx.service.TweetService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -43,6 +45,10 @@ public class TweetServiceImpl implements TweetService {
 
     public void update(TweetEntity tweetEntity) {
         //TODO
+    }
+
+    public Page<TweetEntity> findAll(Pageable pageable) {
+        return tweetRepository.findAll(pageable);
     }
 
     public void updateRawText(String rawText, int tweetId) {
