@@ -30,4 +30,13 @@ public interface UserService extends BaseService<UserEntity> {
      * @throws Exception
      */
     public void AddTweetsToEsByUserId(int userId) throws Exception;
+
+    /**
+     * 得到相似用户 ids, 并存入数据库
+     *
+     * @param number 相似用户数量
+     * @param userId
+     * @throws Exception
+     */
+    public void saveRecommendUserIds(int userId, int number) throws Exception;
 }

@@ -41,10 +41,10 @@ public class UserServiceImplTest {
 
     @Test
     public void doAllData() throws Exception {
-        int start = 1148, end = 1364;
+        int start = 1314, end = 1364;
         for (int i = start; i <= end; ++i) {
-            userService.doTweetsToRawTextByUserId(i);
-//            userService.AddTweetsToEsByUserId(i);
+//            userService.doTweetsToRawTextByUserId(i);
+            userService.AddTweetsToEsByUserId(i);
         }
 //       userService.AddTweetsToEsByUserId(1115);
     }

@@ -41,13 +41,13 @@ public class SearchDataServiceImpl implements SearchDataService {
                 .actionGet();
 
         SearchHit[] searchHits = response.getHits().getHits();
-        for (int i = 0; i < searchHits.length; ++i) {
+        for (SearchHit searchHit : searchHits) {
             Map<String, Object> map = new HashMap<String, Object>();
-            String rawText = (String) searchHits[i].getSource().get("raw_text");
-            Integer tweetId = (Integer) searchHits[i].getSource().get("tweet_id");
-            String createAt = (String) searchHits[i].getSource().get("create_at");
-            Integer  t_userId = (Integer) searchHits[i].getSource().get("user_id");
-            double score = searchHits[i].getScore();
+            String rawText = (String) searchHit.getSource().get("raw_text");
+            Integer tweetId = (Integer) searchHit.getSource().get("tweet_id");
+            String createAt = (String) searchHit.getSource().get("create_at");
+            Integer t_userId = (Integer) searchHit.getSource().get("user_id");
+            double score = searchHit.getScore();
             //LOGGER.info(rawText + "  " + score);
             map.put("score", score);
             map.put("raw_text", rawText);

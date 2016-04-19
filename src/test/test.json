@@ -1,0 +1,37 @@
+GET test-wordnet/tweets/_search
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "match_all": {
+        }
+      },
+      "filter": {
+        "term": {
+          "user_id": 1106
+        }
+      }
+    }
+  }
+}
+
+
+DELETE test-wordnet/tweets/_query
+{
+  "query": {
+    "term": {
+      "user_id": 1106
+    }
+  }
+}
+
+GET test-wordnet/tweets/_search
+{
+  "query": {
+    "match": {
+      "raw_text": {
+        "query": "peopl"
+      }
+    }
+  }
+}

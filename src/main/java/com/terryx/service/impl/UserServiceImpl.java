@@ -1,5 +1,6 @@
 package com.terryx.service.impl;
 
+import com.terryx.elasticsearch.service.SearchDataService;
 import com.terryx.elasticsearch.service.TweetDataService;
 import com.terryx.model.TweetEntity;
 import com.terryx.model.UserEntity;
@@ -14,7 +15,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by xueta on 2016/3/26 20:33.
@@ -31,6 +34,8 @@ public class UserServiceImpl implements UserService {
     TweetService tweetService;
     @Autowired
     TweetDataService tweetDataService;
+    @Autowired
+    SearchDataService searchDataService;
 
     public void save(UserEntity userEntity) {
         userRepository.save(userEntity);
@@ -87,5 +92,25 @@ public class UserServiceImpl implements UserService {
             tweetDataService.addTweetDataByTweetId(tweetId);
             LOGGER.info(userId + " add raw_text to es: " + tweetId);
         }
+    }
+
+    public void saveRecommendUserIds(int userId, int number) throws Exception {
+        Map<String, Double> recommendUserIdsMap = new HashMap<String, Double>();
+        UserEntity userEntity = findById(userId);
+        Collection<TweetEntity> tweetEntities = userEntity.getTweetsById();
+        for (TweetEntity tweetEntity : tweetEntities) {
+            String rawText = tweetEntity.getRawText();
+            List<Map<String, Object>> results = searchDataService.getResult(rawText, userId, 0, number, null);
+            for (Map<String, Object> result : results) {
+                String _userId = (String) result.get("user_id");
+                if (recommendUserIdsMap.containsKey(_userId)) {
+                    Double tmp = recommendUserIdsMap.get(_userId) + (Double) result.get("score");
+                    recommendUserIdsMap.put(_userId, (Double) result.get("score"));
+                } else {
+                    recommendUserIdsMap.put(_userId, (Double) result.get("score"));
+                }
+            }
+        }
+
     }
 }

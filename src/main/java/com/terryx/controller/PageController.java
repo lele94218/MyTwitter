@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PageController {
 
-    @RequestMapping(value = "/hehe")
+    @RequestMapping(value = "/user")
     public String usersPage() {
         return "users";
     }

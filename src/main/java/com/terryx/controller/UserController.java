@@ -23,6 +23,12 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    /**
+     * 用户列表
+     *
+     * @param page
+     * @return
+     */
     @JsonView(Views.Public.class)
     @RequestMapping(value = "/users", method = RequestMethod.POST)
     public Page<UserEntity> getUsersByPage(@RequestBody PageCriteria page) {
@@ -48,5 +54,6 @@ public class UserController {
         System.out.println(userEntity.getName());
         return userEntity;
     }
+
 
 }
