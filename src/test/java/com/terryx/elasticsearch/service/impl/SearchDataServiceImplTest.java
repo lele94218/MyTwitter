@@ -18,6 +18,6 @@ public class SearchDataServiceImplTest {
 
     @Test
     public void getResult() throws Exception {
-        searchDataService.getResult("cat", 1113, 0, 10, null);
+        searchDataService.getResult("dayton funnybone good chance ill sitting entire show tonight dayton ", 1113, 0, 10, null);
     }
 }

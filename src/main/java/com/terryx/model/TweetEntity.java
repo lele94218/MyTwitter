@@ -1,5 +1,7 @@
 package com.terryx.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -13,6 +15,7 @@ public class TweetEntity {
     private String twTweetId;
     private String text;
     private String rawText;
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", timezone = "GMT+08:00")
     private Timestamp createdAt;
     private String lang;
     private String coordinatesX;

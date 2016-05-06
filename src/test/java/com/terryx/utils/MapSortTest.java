@@ -15,12 +15,12 @@ public class MapSortTest {
 
     @Test
     public void sortMap() throws Exception {
-        Map<String, Double> map = new HashMap<String, Double>();
-        map.put("jack", 0.0);
-        map.put("tom", -4.00);
-        map.put("terry", -1.12);
-        Map<String, Double> _map = MapSort.sortMap(map);
-        for (Map.Entry<String, Double> m : _map.entrySet()) {
+        Map<Integer, Double> map = new HashMap<Integer, Double>();
+        map.put(12, 0.0);
+        map.put(13, -4.00);
+        map.put(14, -1.12);
+        Map<Integer, Double> _map = MapSort.sortMap(map);
+        for (Map.Entry<Integer, Double> m : _map.entrySet()) {
             LOGGER.info(m.getKey() + ": " + m.getValue());
         }
     }

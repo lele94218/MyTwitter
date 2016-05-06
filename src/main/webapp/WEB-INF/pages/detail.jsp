@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 
 <head>
@@ -9,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Detail - MyTwitter</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -495,7 +496,32 @@
 <script src="js/jquery.twbsPagination.min.js"></script>
 
 <!-- 分页并同步数据 -->
+<script type="text/javascript">
+    $(function () {
+        var userCriteria = {};
+        userCriteria["page"] = 0;
+        userCriteria["size"] = 10;
+        userCriteria["userId"] = 1095;
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/tweets-by-id",
+            data: JSON.stringify(userCriteria),
+            dataType: 'json',
+            timeout: 200000,
+            success: function (data) {
+                console.log("SUCCESS: ", data);
+            },
+            error: function (e) {
+                console.log("ERROR: ", e);
+            },
+            done: function (e) {
+                console.log("DONE");
+            }
+        });
 
+    });
+</script>
 
 </body>
 

@@ -1,6 +1,7 @@
 package com.terryx.service.impl;
 
 import com.terryx.model.TweetEntity;
+import com.terryx.model.UserEntity;
 import com.terryx.repository.TweetRepository;
 import com.terryx.sematic.raw.TweetsTextProcessing;
 import com.terryx.service.CorpusService;
@@ -11,7 +12,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by xueta on 2016/3/25.
@@ -65,6 +65,10 @@ public class TweetServiceImpl implements TweetService {
         }
 
         updateRawText(stringBuilder.toString(), tweetId);
+    }
+
+    public Page<TweetEntity> findByUserById(UserEntity userEntity, Pageable pageable) {
+        return tweetRepository.findByUserById(userEntity, pageable);
     }
 
     public String getTextByTweetId(int tweetId) {

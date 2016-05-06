@@ -33,7 +33,8 @@ public class SearchDataServiceImpl implements SearchDataService {
             LOGGER.error("Client is null!");
         SearchResponse response = client.prepareSearch("test-wordnet")
                 .setTypes("tweets")
-                .setQuery(QueryBuilders.termQuery("raw_text", keyword))
+                .setQuery(QueryBuilders.matchQuery("raw_text", keyword))
+                //.setQuery(QueryBuilders.termQuery("raw_text", keyword))
                 // 过滤到当前 user_id
                 .setPostFilter(FilterBuilders.boolFilter().mustNot(FilterBuilders.termFilter("user_id", userId)))
                 .setFrom(from).setSize(size).setExplain(true)
@@ -48,7 +49,7 @@ public class SearchDataServiceImpl implements SearchDataService {
             String createAt = (String) searchHit.getSource().get("create_at");
             Integer t_userId = (Integer) searchHit.getSource().get("user_id");
             double score = searchHit.getScore();
-            //LOGGER.info(rawText + "  " + score);
+//            LOGGER.info(t_userId + ": " + rawText + "  " + score);
             map.put("score", score);
             map.put("raw_text", rawText);
             map.put("tweet_id", tweetId);
