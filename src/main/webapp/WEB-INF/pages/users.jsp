@@ -13,23 +13,23 @@
     <title>Users - MyTwitter</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="css/metisMenu.min.css" rel="stylesheet">
+    <link href="/css/metisMenu.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="css/dataTables.bootstrap.css"
+    <link href="/css/dataTables.bootstrap.css"
           rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
     <!--<link href="bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">-->
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -409,23 +409,23 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="js/jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="js/metisMenu.min.js"></script>
+<script src="/js/metisMenu.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="js/sb-admin-2.js"></script>
+<script src="/js/sb-admin-2.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="js/jquery.dataTables.min.js"></script>
-<script src="js/dataTables.bootstrap.min.js"></script>
+<script src="/js/jquery.dataTables.min.js"></script>
+<script src="/js/dataTables.bootstrap.min.js"></script>
 
 
-<script src="js/jquery.twbsPagination.min.js"></script>
+<script src="/js/jquery.twbsPagination.min.js"></script>
 
 <!-- 分页并同步数据 -->
 <script type='text/javascript'>
@@ -514,7 +514,7 @@
         $('#loading').remove();
         for (var i = 0; i < data.content.length; ++i) {
             add(data.content[i].name + " @" + data.content[i].screenName
-                    , data.content[i].description + "&nbsp;&nbsp;<a href=''>More..</a>"
+                    , data.content[i].description + "&nbsp;&nbsp;<a href='/detail/"+ data.content[i].userId + "'>More..</a>"
                     , i + 1);
             $(function () {
                 $('#collapse' + (i + 1)).collapse('hide');

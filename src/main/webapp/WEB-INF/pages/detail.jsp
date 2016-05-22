@@ -13,23 +13,23 @@
     <title>Detail - MyTwitter</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="css/metisMenu.min.css" rel="stylesheet">
+    <link href="/css/metisMenu.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="css/dataTables.bootstrap.css"
+    <link href="/css/dataTables.bootstrap.css"
           rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
     <!--<link href="bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">-->
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -65,42 +65,6 @@
                 </a>
                 <ul class="dropdown-menu dropdown-messages">
                     <li>
-                        <a href="#">
-                            <div>
-                                <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
                         <a class="text-center" href="#">
                             <strong>Read All Messages</strong>
                             <i class="fa fa-angle-right"></i>
@@ -115,73 +79,7 @@
                     <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-tasks">
-                    <li>
-                        <a href="#">
-                            <div>
-                                <p>
-                                    <strong>Task 1</strong>
-                                    <span class="pull-right text-muted">40% Complete</span>
-                                </p>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only">40% Complete (success)</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <p>
-                                    <strong>Task 2</strong>
-                                    <span class="pull-right text-muted">20% Complete</span>
-                                </p>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                        <span class="sr-only">20% Complete</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <p>
-                                    <strong>Task 3</strong>
-                                    <span class="pull-right text-muted">60% Complete</span>
-                                </p>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only">60% Complete (warning)</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <p>
-                                    <strong>Task 4</strong>
-                                    <span class="pull-right text-muted">80% Complete</span>
-                                </p>
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                        <span class="sr-only">80% Complete (danger)</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+
                     <li class="divider"></li>
                     <li>
                         <a class="text-center" href="#">
@@ -198,50 +96,6 @@
                     <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-alerts">
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-comment fa-fw"></i> New Comment
-                                <span class="pull-right text-muted small">4 minutes ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                <span class="pull-right text-muted small">12 minutes ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                <span class="pull-right text-muted small">4 minutes ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-tasks fa-fw"></i> New Task
-                                <span class="pull-right text-muted small">4 minutes ago</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                <span class="pull-right text-muted small">4 minutes ago</span>
-                            </div>
-                        </a>
-                    </li>
                     <li class="divider"></li>
                     <li>
                         <a class="text-center" href="#">
@@ -287,93 +141,9 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Users</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="flot.html">Flot Charts</a>
-                            </li>
-                            <li>
-                                <a href="morris.html">Morris.js Charts</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                    </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="panels-wells.html">Panels and Wells</a>
-                            </li>
-                            <li>
-                                <a href="buttons.html">Buttons</a>
-                            </li>
-                            <li>
-                                <a href="notifications.html">Notifications</a>
-                            </li>
-                            <li>
-                                <a href="typography.html">Typography</a>
-                            </li>
-                            <li>
-                                <a href="icons.html"> Icons</a>
-                            </li>
-                            <li>
-                                <a href="grid.html">Grid</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-third-level -->
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li class="active">
-                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a class="active" href="blank.html">Blank Page</a>
-                            </li>
-                            <li>
-                                <a href="login.html">Login Page</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
+
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->
@@ -386,7 +156,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Luanne Rice @LuanneRice</h1>
+                    <h1 class="page-header">${name} @${screenName}</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -407,13 +177,13 @@
                             <div class="panel-body">
                                 <div class="row clearfix">
                                     <div class="col-md-2 column">
-                                        <img width="120" height="120" src="img/profile/0X5Qkb8M_normal.jpeg"
+                                        <img width="120" height="120" src="/img/profile/${imgFileName}"
+                                             onerror="this.src = '/img/error.png'"
                                              class="img-thumbnail"/>
                                     </div>
                                     <div class="col-md-10 column">
                                         <div class="row clearfix">
-                                            <em>NY Times best selling writer. THE SECRET LANGUAGE OF SISTERS is
-                                                available now.</em>
+                                            <em>${description}</em>
                                         </div>
                                         <div class="row clearfix">
                                             <div class="col-md-4 column">
@@ -425,26 +195,38 @@
                                                 </div>
                                                 <div class="col-md-10 column">
                                                     <h6><strong>Similar users:</strong></h6>
-                                                    <img src="img/profile/0X5Qkb8M_normal.jpeg" class="img-thumbnail"/>
-                                                    <img src="img/profile/1wpS7suK_normal.jpeg" class="img-thumbnail"/>
-                                                    <img src="img/profile/0X5Qkb8M_normal.jpeg" class="img-thumbnail"/>
-                                                    <img src="img/profile/0X5Qkb8M_normal.jpeg" class="img-thumbnail"/>
-                                                    <img src="img/profile/3dUsYGIz_normal.png" class="img-thumbnail"/>
-                                                    <img src="img/profile/0X5Qkb8M_normal.jpeg" class="img-thumbnail"/>
-                                                    <img src="img/profile/3dUsYGIz_normal.png" class="img-thumbnail"/>
-                                                    <img src="img/profile/0X5Qkb8M_normal.jpeg" class="img-thumbnail"/>
+                                                    <c:forEach items="${SimilarUsers}" var="user">
+                                                        <a href="/detail/${user.userId}"><img
+                                                                src="/img/profile/${user.profileImageUrl}"
+                                                                width="58" height="58"
+                                                                onerror="this.src = '/img/error.png'"
+                                                                class=" img-thumbnail"/></a>
+                                                    </c:forEach>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="page-header">Similarities</h3>
+                </div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-md-12 column">
+                    <div style="width: 50%">
+                        <canvas id="canvas" height="450" width="600"></canvas>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-lg-12">
                     <h3 class="page-header">Tweets</h3>
@@ -453,21 +235,21 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-md-12 column">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                Panel title
-                            </h3>
-                        </div>
-                        <div class="panel-body">
-                            Panel content
-                        </div>
-                        <div class="panel-footer">
-                            Panel footer
-                        </div>
-                    </div>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>Tweets</th>
+                        </tr>
+                        </thead>
+                        <tbody id="userTweets">
+                        </tbody>
+                    </table>
+                    <ul id="pagination-demo" class="pagination"></ul>
                 </div>
             </div>
+
+
+
         </div>
         <!-- /.container-fluid -->
     </div>
@@ -477,40 +259,91 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="js/jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/Chart.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="js/metisMenu.min.js"></script>
+<script src="/js/metisMenu.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="js/sb-admin-2.js"></script>
+<script src="/js/sb-admin-2.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="js/jquery.dataTables.min.js"></script>
-<script src="js/dataTables.bootstrap.min.js"></script>
+<script src="/js/jquery.dataTables.min.js"></script>
+<script src="/js/dataTables.bootstrap.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 
 
-<script src="js/jquery.twbsPagination.min.js"></script>
+<script src="/js/jquery.twbsPagination.min.js"></script>
 
 <!-- 分页并同步数据 -->
 <script type="text/javascript">
+    var barChartData = {
+        labels: [],
+        datasets: [
+            {
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,0.8)",
+                highlightFill: "rgba(220,220,220,0.75)",
+                highlightStroke: "rgba(220,220,220,1)",
+                data: []
+            }
+        ]
+
+    };
+    function add(str) {
+        $('#userTweets').append("<tr><td>" + str + "</tr></td>");
+    }
+
     $(function () {
+
+        var hrefStr = window.location.pathname;
+        var pathNames = hrefStr.split('/');
+        var idStr = pathNames[pathNames.length - 1];
+
+        var userCt = {};
+        userCt["userId"] = idStr;
+        userCt["number"] = 10;
+        userCt["top"] = 8;
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/recommend-users",
+            data: JSON.stringify(userCt),
+            dataType: 'json',
+            timeout: 100000,
+            success: function (data) {
+                console.log("SUCCESS: ", data);
+                doIt(data);
+            },
+            error: function (e) {
+                console.log("ERROR: ", e);
+            },
+            done: function (e) {
+                console.log("DONE");
+            }
+        });
+
         var userCriteria = {};
         userCriteria["page"] = 0;
-        userCriteria["size"] = 10;
-        userCriteria["userId"] = 1095;
+        userCriteria["size"] = 15;
+        userCriteria["userId"] = idStr;
+
         $.ajax({
             type: "POST",
             contentType: "application/json",
             url: "/tweets-by-id",
             data: JSON.stringify(userCriteria),
             dataType: 'json',
-            timeout: 200000,
+            timeout: 100000,
             success: function (data) {
                 console.log("SUCCESS: ", data);
+                display(data);
+                var pageNum = data.totalPages;
+                addPage(pageNum);
             },
             error: function (e) {
                 console.log("ERROR: ", e);
@@ -521,6 +354,64 @@
         });
 
     });
+    function callback(pageNo, pageSize) {
+        var userCriteria = {};
+        userCriteria["page"] = pageNo;
+        userCriteria["size"] = pageSize;
+        var hrefStr = window.location.pathname;
+        var pathNames = hrefStr.split('/');
+        var idStr = pathNames[pathNames.length - 1];
+        userCriteria["userId"] = idStr;
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/tweets-by-id",
+            data: JSON.stringify(userCriteria),
+            dataType: 'json',
+            timeout: 100000,
+            success: function (data) {
+                console.log("SUCCESS: ", data);
+                display(data);
+            },
+            error: function (e) {
+                console.log("ERROR: ", e);
+            },
+            done: function (e) {
+                console.log("DONE");
+            }
+        });
+    }
+
+    function doIt(data) {
+        for (var i = 0; i < data.length; ++ i) {
+            barChartData.labels[i] = data[i].userEntity.userId;
+            barChartData.datasets[0].data[i] = data[i].similarity;
+        }
+        var ctx = document.getElementById("canvas").getContext("2d");
+        window.myBar = new Chart(ctx).Bar(barChartData, {
+            responsive: true
+        });
+    }
+
+    function addPage(pageNum) {
+        $('#pagination-demo').twbsPagination({
+            totalPages: pageNum,
+            visiblePages: 7,
+            onPageClick: function (event, page) {
+                $('#userTweets').empty();
+//                var imgHtml = "<tr id='loding'><td><img src='/img/loading.gif' height='30' width='30'></td></tr>";
+//                $('#userTweets').append(imgHtml);
+                callback(page - 1, 15);
+            }
+        });
+    }
+
+    function display(data) {
+//        $('#loading').remove();
+        for (var i = 0; i < data.content.length; ++i) {
+            add("<em>" + data.content[i].createdAt + "</em>" + "<br>" + data.content[i].text);
+        }
+    }
 </script>
 
 </body>

@@ -34,9 +34,9 @@ public class UserController {
     private final static Logger LOGGER = Logger.getLogger(UserController.class);
 
     @Autowired
-    UserService userService;
+    private UserService userService;
     @Autowired
-    TweetService tweetService;
+    private TweetService tweetService;
 
     /**
      * 用户列表
