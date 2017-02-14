@@ -1,12 +1,12 @@
 social_network_paper
 ====================
 
-## 简介
+## Shortcut
 
 1. Analysis of social network data, the Friends of the recommended function to achieve the basic completion of the algorithm to complete the display Web application back-end implementation.
 
 ============
-## 介绍
+## Introduction
 
 1. Java Web application for graduation design algorithm demonstration
 
@@ -19,7 +19,7 @@ social_network_paper
     - View: JSP, JavaScript 
     
 ===
-## 算法思路
+## Methods
 
 1. Use Elasticsearch to index Tweets, index 500 - 1000 words for each user.
 
