@@ -3,14 +3,14 @@ social_network_paper
 
 ## 简介
 
-1. 分析社交网络数据, 进行好友推荐功能实现. 算法基本实现完成, 完成展示 Web 应用的后端实现.
+1. Analysis of social network data, the Friends of the recommended function to achieve the basic completion of the algorithm to complete the display Web application back-end implementation.
 
 ============
 ## 介绍
 
-1. Java Web 应用, 用于毕业设计算法演示
+1. Java Web application for graduation design algorithm demonstration
 
-2. MVC 设计模式, 技术选型：
+2. MVC design patterns, technical selection:
 
     - Controller: Spring MVC
     
@@ -21,6 +21,6 @@ social_network_paper
 ===
 ## 算法思路
 
-1. 使用 Elasticsearch 对 Tweets 进行索引, 对每个用户索引 500 - 1000 词
+1. Use Elasticsearch to index Tweets, index 500 - 1000 words for each user.
 
-2. Elasticsearch 与 Wordnet 结合进行搜索, 获得指数
+2. Elasticsearch combined with Wordnet to search for an index.
