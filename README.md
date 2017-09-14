@@ -1,5 +1,4 @@
-social_network_paper
-====================
+
 
 ## Shortcut
 
