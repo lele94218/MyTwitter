@@ -4,6 +4,17 @@
 
 1. Analysis of social network data, the Friends of the recommended function to achieve the basic completion of the algorithm to complete the display Web application back-end implementation.
 
+![preview1](/Picture1.png)
+
+
+![preview2](/Picture2.png)
+
+
+![preview3](/Picture3.png)
+
+
+![preview4](/Picture4.png)
+
 
 ## Introduction
 
